@@ -1,10 +1,16 @@
-﻿using EFCore.WebAPI.Models;
+﻿using EFCore.Dominio;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore.WebAPI.Data
+namespace EFCore.Repo
 {
     public class HeroiContext : DbContext
     {
+        public HeroiContext()
+        {
+
+        }
+        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
+    
         public DbSet<Heroi> Herois { get; set; }
         public DbSet<Arma> Armas { get; set; }
         public DbSet<Batalha> Batalhas { get; set; }
